@@ -9,27 +9,24 @@ const result = document.getElementById("result");
 const clearAllButton = document.querySelector(".clear_form_button");
 const createNoteButton = document.querySelector(".create_note_button");
 
-// console.log(lca);
-
-// clearAllButton.addEventListener("click", () => {
-//   console.log("This button will erase all fields");
-// });
-
 createNoteButton.addEventListener("click", () => {
-  console.log("This button will generate the note");
-  console.log(getLca());
-  console.log(generatedNote);
+  const generatedNote = `
+${getLca()}
+TT: ${callerName.value}
+CID: ${callerId.value}
+VAP: ${vap.value}
+RFD: ${rfd.value}
+NOTES: ${result.value}
+`;
+  alert(generatedNote);
 });
 
 function getLca() {
-  let lcaoptionSelected;
   for (const lcaoption of lca) {
     if (lcaoption.checked) {
-      lcaoptionSelected = lcaoption.value;
-      break;
+      return lcaoption.value;
     }
   }
-  return lcaoptionSelected;
 }
 
 function getNumbersOnly(input) {
@@ -44,45 +41,42 @@ function getNumbersOnly(input) {
 
 // console.log(getNumbersOnly("(405) 778 - 2810"));
 
-const customer = {
-  name: "John Doe",
-  number: "(404)-123-4567",
-  address: "123 Main Way, Houston, Texas, 74745-0000, USA",
-  email: "testing@customerway.com",
-  profile: "Customer",
-  monthlyPayment: "$445.88",
-  pastDueAmount: "$1003.66",
-  lateCharge: "$0.00",
-  contractType: "lease",
-};
+// const customer = {
+//   name: "John Doe",
+//   number: "(404)-123-4567",
+//   address: "123 Main Way, Houston, Texas, 74745-0000, USA",
+//   email: "testing@customerway.com",
+//   profile: "Customer",
+//   monthlyPayment: "$445.88",
+//   pastDueAmount: "$1003.66",
+//   lateCharge: "$0.00",
+//   contractType: "lease",
+// };
 
-const call = {
-  type: "inbound",
-  talkedTo: "CX",
-  callerID: "number-here",
-  vap: "yes",
-  reasonForDefault: "unemployed",
-  summary: "call info",
-  transperfectId: "call didn't require transperfect",
-};
+// const call = {
+//   type: "inbound",
+//   talkedTo: "CX",
+//   callerID: "number-here",
+//   vap: "yes",
+//   reasonForDefault: "unemployed",
+//   summary: "call info",
+//   transperfectId: "call didn't require transperfect",
+// };
 
-const extensionNote = `TT: ${customer.name}. ${
-  customer.profile
-} requesting extension for ${1}.
-    RFD: ${call.reasonForDefault}. Also ${
-  customer.profile
-} request notice to be sent to their : ${customer.email}.`;
-
-const generatedNote = `
-${getLca()}
-TT: ${callerName.value}
-CID: ${callerId.value}
-VAP: ${vap.value}
-RFD: ${rfd.value}
-NOTES: ${result.value}
-`;
+// const extensionNote = `TT: ${customer.name}. ${
+//   customer.profile
+// } requesting extension for ${1}.
+//     RFD: ${call.reasonForDefault}. Also ${
+//   customer.profile
+// } request notice to be sent to their : ${customer.email}.`;
 
 // console.log(getNumbersOnly(customer.number));
 // console.log(customer);
 // console.log(call.reasonForDefault);
 // console.log(extensionNote);
+
+// console.log(lca);
+
+// clearAllButton.addEventListener("click", () => {
+//   console.log("This button will erase all fields");
+// });
