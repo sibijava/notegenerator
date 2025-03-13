@@ -36,6 +36,7 @@ button {
   font-size: medium;
   border: none;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .clear_form_button {

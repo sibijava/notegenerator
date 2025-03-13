@@ -1,30 +1,50 @@
+const body = document.querySelector("body");
 const lca = document.querySelectorAll('input[name="lca"]');
 const callerName = document.getElementById("caller_name");
+const profile = document.getElementById("profile");
 const callerId = document.getElementById("caller_id");
 const email = document.getElementById("email");
 const address = document.getElementById("address");
 const vap = document.getElementById("vap");
 const rfd = document.getElementById("rfd");
+const extensionNeeded = document.querySelectorAll(
+  'input[name="extension_needed"]'
+);
 const result = document.getElementById("result");
 const clearAllButton = document.querySelector(".clear_form_button");
 const createNoteButton = document.querySelector(".create_note_button");
+const extensionButton = document.querySelector(".extension_button");
 
 createNoteButton.addEventListener("click", () => {
   const generatedNote = `
-${getLca()}
+${getRadioValue(lca)} call
 TT: ${callerName.value}
 CID: ${callerId.value}
 VAP: ${vap.value}
 RFD: ${rfd.value}
-NOTES: ${result.value}
+NOTE: ${result.value}
 `;
-  alert(generatedNote);
+  copyToClipboard(generatedNote);
+  alert("Note copied to clipboard!");
 });
 
-function getLca() {
-  for (const lcaoption of lca) {
-    if (lcaoption.checked) {
-      return lcaoption.value;
+extensionButton.addEventListener("click", () => {
+  let extensionAmount = getRadioValue(extensionNeeded);
+  if (extensionAmount === "one_month") {
+    extensionAmount = "1 month";
+  } else {
+    extensionAmount = "2 months";
+  }
+  const extensionNote = `
+TT: ${callerName.value}. ${profile.value} requesting extension for ${extensionAmount}. RFD: ${rfd.value}. Also ${profile.value} request notice to be sent to their email address: ${email.value}.`;
+  copyToClipboard(extensionNote);
+  alert("extension note copied to clipboard");
+});
+
+function getRadioValue(radioValues) {
+  for (const radioValue of radioValues) {
+    if (radioValue.checked) {
+      return radioValue.value;
     }
   }
 }
@@ -37,6 +57,10 @@ function getNumbersOnly(input) {
   let numberWithoutDashes = numberArray.filter((x) => parseInt(x) < 10);
   numberWithoutDashes = numberWithoutDashes.reduce((prev, curr) => prev + curr);
   return numberWithoutDashes;
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text);
 }
 
 // console.log(getNumbersOnly("(405) 778 - 2810"));
@@ -62,13 +86,6 @@ function getNumbersOnly(input) {
 //   summary: "call info",
 //   transperfectId: "call didn't require transperfect",
 // };
-
-// const extensionNote = `TT: ${customer.name}. ${
-//   customer.profile
-// } requesting extension for ${1}.
-//     RFD: ${call.reasonForDefault}. Also ${
-//   customer.profile
-// } request notice to be sent to their : ${customer.email}.`;
 
 // console.log(getNumbersOnly(customer.number));
 // console.log(customer);

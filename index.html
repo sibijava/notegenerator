@@ -23,9 +23,9 @@
         <legend>Profile</legend>
         <select name="profile" id="profile">
           <option value="cs" selected>CS</option>
-          <option value="cs">CX</option>
+          <option value="cx">CX</option>
           <option value="auth_3p">Auth 3P</option>
-          <option value="unauthorized">Unauthorized 3P</option>
+          <option value="unauthorized_3p">Unauthorized 3P</option>
         </select>
       </fieldset>
       <label for="caller_id">Caller ID: </label>
@@ -48,6 +48,24 @@
       <input type="text" id="vap" name="vap" />
       <label for="rfd">RFD: </label>
       <input type="text" id="rfd" name="rfd" />
+      <fieldset>
+        <legend>Extension</legend>
+        <label for="one_month">1 month</label>
+        <input
+          type="radio"
+          id="one_month"
+          name="extension_needed"
+          value="one_month"
+          checked
+        />
+        <label for="two_months">2 months</label>
+        <input
+          type="radio"
+          id="two_months"
+          name="extension_needed"
+          value="two_months"
+        />
+      </fieldset>
       <label for="result">Result: </label>
       <textarea
         rows="10"
@@ -59,6 +77,7 @@
       <div class="button_container">
         <button type="reset" class="clear_form_button">Clear All</button>
         <button type="button" class="create_note_button">Create Note</button>
+        <button type="button" class="extension_button">Extension</button>
       </div>
     </form>
   </body>
