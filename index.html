@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Note Generator</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
-    <h1>This is a Note Generator</h1>
+    <h1 class="header">This is a Note Generator</h1>
     <form action="#">
-      <select name="lca" id="lca">
-        <option value="inbound">Inbound</option>
-        <option value="outbound">Outbound</option>
-      </select>
+      <fieldset>
+        <legend>LCA</legend>
+        <label for="inbound">Inbound</label>
+        <input type="radio" id="inbound" name="lca" value="inbound" checked />
+        <label for="outbound">Outbound</label>
+        <input type="radio" id="outbound" name="lca" value="outbound" />
+      </fieldset>
       <label for="caller_name">Caller Name: </label>
       <input type="text" id="caller_name" name="caller_name" />
+      <fieldset>
+        <legend>Profile</legend>
+        <select name="profile" id="profile">
+          <option value="cs" selected>CS</option>
+          <option value="cs">CX</option>
+          <option value="auth_3p">Auth 3P</option>
+          <option value="unauthorized">Unauthorized 3P</option>
+        </select>
+      </fieldset>
       <label for="caller_id">Caller ID: </label>
       <input type="text" id="caller_id" name="caller_id" />
       <label for="email">Email: </label>
@@ -32,8 +44,8 @@
         name="address"
         placeholder="123 any street"
       />
-      <label for="authentication">Authenticate: </label>
-      <input type="text" id="authentication" name="authentication" />
+      <label for="vap">VAP: </label>
+      <input type="text" id="vap" name="vap" />
       <label for="rfd">RFD: </label>
       <input type="text" id="rfd" name="rfd" />
       <label for="result">Result: </label>
@@ -42,10 +54,12 @@
         cols="20"
         id="result"
         name="result"
-        placeholder="Notes"
+        placeholder="Note"
       ></textarea>
-      <button type="reset">Clear</button>
-      <button>Create Note</button>
+      <div class="button_container">
+        <button type="reset" class="clear_form_button">Clear All</button>
+        <button type="button" class="create_note_button">Create Note</button>
+      </div>
     </form>
   </body>
 </html>
