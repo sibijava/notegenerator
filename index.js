@@ -63,6 +63,19 @@ function copyToClipboard(text) {
   navigator.clipboard.writeText(text);
 }
 
+// function checkIfNoAnswer(value, func) {
+//   const neededValue = func(value);
+//   if (neededValue === "noanswer") {
+//     console.log("This is a no answer call");
+//     return;
+//   }
+// }
+
+// function displayNoAnswerForm() {
+//   const NoAnswerInnerHtml = `
+//   `
+// }
+
 // console.log(getNumbersOnly("(405) 778 - 2810"));
 
 // const customer = {

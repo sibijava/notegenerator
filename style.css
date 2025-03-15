@@ -47,6 +47,16 @@ button {
   background: green;
 }
 
+.ext_info_button {
+  background: yellow;
+}
+
+.extension_info {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 376px) {
   form {
     margin: 8% auto;

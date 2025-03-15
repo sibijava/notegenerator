@@ -9,6 +9,7 @@
   </head>
   <body>
     <h1 class="header">This is a Note Generator</h1>
+    <button type="button" class="ext_info_button">Ext Info</button>
     <form action="#">
       <fieldset>
         <legend>LCA</legend>
@@ -16,6 +17,8 @@
         <input type="radio" id="inbound" name="lca" value="inbound" checked />
         <label for="outbound">Outbound</label>
         <input type="radio" id="outbound" name="lca" value="outbound" />
+        <label for="noanswer">No Answer</label>
+        <input type="radio" id="noanswer" name="lca" value="noanswer" />
       </fieldset>
       <label for="caller_name">Caller Name: </label>
       <input type="text" id="caller_name" name="caller_name" />
@@ -30,42 +33,44 @@
       </fieldset>
       <label for="caller_id">Caller ID: </label>
       <input type="text" id="caller_id" name="caller_id" />
-      <label for="email">Email: </label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="johndoe@example.com"
-      />
-      <label for="address">Address: </label>
-      <input
-        type="text"
-        id="address"
-        name="address"
-        placeholder="123 any street"
-      />
       <label for="vap">VAP: </label>
       <input type="text" id="vap" name="vap" />
       <label for="rfd">RFD: </label>
       <input type="text" id="rfd" name="rfd" />
-      <fieldset>
-        <legend>Extension</legend>
-        <label for="one_month">1 month</label>
+      <div class="extension_info">
+        <fieldset>
+          <legend>Extension</legend>
+          <label for="one_month">1 month</label>
+          <input
+            type="radio"
+            id="one_month"
+            name="extension_needed"
+            value="one_month"
+            checked
+          />
+          <label for="two_months">2 months</label>
+          <input
+            type="radio"
+            id="two_months"
+            name="extension_needed"
+            value="two_months"
+          />
+        </fieldset>
+        <label for="email">Email: </label>
         <input
-          type="radio"
-          id="one_month"
-          name="extension_needed"
-          value="one_month"
-          checked
+          type="email"
+          id="email"
+          name="email"
+          placeholder="johndoe@example.com"
         />
-        <label for="two_months">2 months</label>
+        <label for="address">Address: </label>
         <input
-          type="radio"
-          id="two_months"
-          name="extension_needed"
-          value="two_months"
+          type="text"
+          id="address"
+          name="address"
+          placeholder="123 any street"
         />
-      </fieldset>
+      </div>
       <label for="result">Result: </label>
       <textarea
         rows="10"
