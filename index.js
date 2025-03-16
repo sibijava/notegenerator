@@ -1,19 +1,23 @@
 const body = document.querySelector("body");
 const lca = document.querySelectorAll('input[name="lca"]');
-const callerName = document.getElementById("caller_name");
+const callerName = document.getElementById("caller-name");
 const profile = document.getElementById("profile");
-const callerId = document.getElementById("caller_id");
+const callerId = document.getElementById("caller-id");
 const email = document.getElementById("email");
 const address = document.getElementById("address");
 const vap = document.getElementById("vap");
 const rfd = document.getElementById("rfd");
 const extensionNeeded = document.querySelectorAll(
-  'input[name="extension_needed"]'
+  'input[name="extension-needed"]'
 );
 const result = document.getElementById("result");
-const clearAllButton = document.querySelector(".clear_form_button");
-const createNoteButton = document.querySelector(".create_note_button");
-const extensionButton = document.querySelector(".extension_button");
+const clearAllButton = document.querySelector(".clear-form-button");
+const createNoteButton = document.querySelector(".create-note-button");
+const extensionInfo = document.querySelector(".extension-info");
+const extInfoButton = document.querySelector(".ext-info-button");
+const promiseInfo = document.querySelector(".promise-info");
+const promiseInfoButton = document.querySelector(".promise-info-button");
+const extensionButton = document.querySelector(".extension-button");
 
 createNoteButton.addEventListener("click", () => {
   const generatedNote = `
@@ -28,9 +32,17 @@ NOTE: ${result.value}
   alert("Note copied to clipboard!");
 });
 
+extInfoButton.addEventListener("click", () => {
+  extensionInfo.classList.toggle("extension-info-displayed");
+});
+
+promiseInfoButton.addEventListener("click", () => {
+  promiseInfo.classList.toggle("promise-info-displayed");
+});
+
 extensionButton.addEventListener("click", () => {
   let extensionAmount = getRadioValue(extensionNeeded);
-  if (extensionAmount === "one_month") {
+  if (extensionAmount === "one-month") {
     extensionAmount = "1 month";
   } else {
     extensionAmount = "2 months";

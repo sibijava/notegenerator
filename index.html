@@ -9,7 +9,8 @@
   </head>
   <body>
     <h1 class="header">This is a Note Generator</h1>
-    <button type="button" class="ext_info_button">Ext Info</button>
+    <button type="button" class="ext-info-button">Ext Info</button>
+    <button type="button" class="promise-info-button">Promise info</button>
     <form action="#">
       <fieldset>
         <legend>LCA</legend>
@@ -21,39 +22,39 @@
         <input type="radio" id="noanswer" name="lca" value="noanswer" />
       </fieldset>
       <label for="caller_name">Caller Name: </label>
-      <input type="text" id="caller_name" name="caller_name" />
+      <input type="text" id="caller-name" name="caller-name" />
       <fieldset>
         <legend>Profile</legend>
         <select name="profile" id="profile">
           <option value="cs" selected>CS</option>
           <option value="cx">CX</option>
-          <option value="auth_3p">Auth 3P</option>
-          <option value="unauthorized_3p">Unauthorized 3P</option>
+          <option value="auth-3p">Auth 3P</option>
+          <option value="unauthorized-3p">Unauthorized 3P</option>
         </select>
       </fieldset>
-      <label for="caller_id">Caller ID: </label>
-      <input type="text" id="caller_id" name="caller_id" />
+      <label for="caller-id">Caller ID: </label>
+      <input type="text" id="caller-id" name="caller-id" />
       <label for="vap">VAP: </label>
       <input type="text" id="vap" name="vap" />
       <label for="rfd">RFD: </label>
       <input type="text" id="rfd" name="rfd" />
-      <div class="extension_info">
+      <div class="extension-info">
         <fieldset>
           <legend>Extension</legend>
-          <label for="one_month">1 month</label>
+          <label for="one-month">1 month</label>
           <input
             type="radio"
             id="one_month"
-            name="extension_needed"
-            value="one_month"
+            name="extension-needed"
+            value="one-month"
             checked
           />
-          <label for="two_months">2 months</label>
+          <label for="two-months">2 months</label>
           <input
             type="radio"
-            id="two_months"
-            name="extension_needed"
-            value="two_months"
+            id="two-months"
+            name="extension-needed"
+            value="two-months"
           />
         </fieldset>
         <label for="email">Email: </label>
@@ -71,6 +72,20 @@
           placeholder="123 any street"
         />
       </div>
+      <div class="promise-info">
+        <label for="method-1">Method 1: </label>
+        <input type="text" id="method-1" name="method-1" />
+        <label for="amount-1">Amount 1: </label>
+        <input type="text" id="amount-1" name="amount-1" />
+        <label for="date-1">Date 1: </label>
+        <input type="text" id="date-1" name="date-1" />
+        <label for="method-2">Method 2: </label>
+        <input type="text" id="method-1" name="method-1" />
+        <label for="amount-2">Amount 2: </label>
+        <input type="text" id="amount-1" name="amount-1" />
+        <label for="date-2">Date 2: </label>
+        <input type="text" id="date-1" name="date-1" />
+      </div>
       <label for="result">Result: </label>
       <textarea
         rows="10"
@@ -79,10 +94,10 @@
         name="result"
         placeholder="Note"
       ></textarea>
-      <div class="button_container">
-        <button type="reset" class="clear_form_button">Clear All</button>
-        <button type="button" class="create_note_button">Create Note</button>
-        <button type="button" class="extension_button">Extension</button>
+      <div class="button-container">
+        <button type="reset" class="clear-form-button">Clear All</button>
+        <button type="button" class="create-note-button">Create Note</button>
+        <button type="button" class="extension-button">Extension</button>
       </div>
     </form>
   </body>

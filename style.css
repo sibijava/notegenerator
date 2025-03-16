@@ -21,7 +21,7 @@ form {
   gap: 0.2rem;
 }
 
-.button_container {
+.button-container {
   display: flex;
   height: 4rem;
   margin: 1rem 0;
@@ -39,20 +39,26 @@ button {
   cursor: pointer;
 }
 
-.clear_form_button {
+.clear-form-button {
   background: red;
 }
 
-.create_note_button {
+.create-note-button,
+.promise-info-button {
   background: green;
 }
 
-.ext_info_button {
+.ext-info-button {
   background: yellow;
 }
 
-.extension_info {
-  /* display: none; */
+.extension-info,
+.promise-info {
+  display: none;
+}
+
+.extension-info-displayed,
+.promise-info-displayed {
   display: flex;
   flex-direction: column;
 }
@@ -60,6 +66,7 @@ button {
 @media (min-width: 376px) {
   form {
     margin: 8% auto;
-    width: 50%;
+    width: 25%;
+    flex-wrap: wrap;
   }
 }
