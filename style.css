@@ -63,6 +63,17 @@ button {
   flex-direction: column;
 }
 
+.account-facts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.account-facts-group {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
 @media (min-width: 376px) {
   form {
     margin: 8% auto;

@@ -1,5 +1,10 @@
 const body = document.querySelector("body");
 const lca = document.querySelectorAll('input[name="lca"]');
+const pda = document.getElementById("pda");
+const lateCharge = document.getElementById("late-charge");
+const miscCharge = document.getElementById("misc-charge");
+const nextDd = document.getElementById("next-dd");
+const nextDdAmount = document.getElementById("next-dd-amount");
 const callerName = document.getElementById("caller-name");
 const profile = document.getElementById("profile");
 const callerId = document.getElementById("caller-id");
@@ -21,9 +26,14 @@ const extensionButton = document.querySelector(".extension-button");
 
 createNoteButton.addEventListener("click", () => {
   const generatedNote = `
-${getRadioValue(lca)} call
+${getRadioValue(lca).toUpperCase()} call
+I adv. PDA: $${pda.value} plus late charges of $${
+    lateCharge.value
+  } and misc charges of $${miscCharge.value}. Next DD ${nextDd.value} IAO $${
+    nextDdAmount.value
+  }.
 TT: ${callerName.value}
-CID: ${callerId.value}
+CID: ${getNumbersOnly(callerId.value)}
 VAP: ${vap.value}
 RFD: ${rfd.value}
 NOTE: ${result.value}
