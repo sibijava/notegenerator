@@ -39,7 +39,8 @@ button {
   cursor: pointer;
 }
 
-.clear-form-button {
+.clear-form-button,
+.payment-correction-button {
   background: red;
 }
 
@@ -53,12 +54,14 @@ button {
 }
 
 .extension-info,
-.promise-info {
+.promise-info,
+.payment-correction-info {
   display: none;
 }
 
 .extension-info-displayed,
-.promise-info-displayed {
+.promise-info-displayed,
+.payment-correction-info-displayed {
   display: flex;
   flex-direction: column;
 }

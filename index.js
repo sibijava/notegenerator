@@ -22,13 +22,19 @@ const extensionInfo = document.querySelector(".extension-info");
 const extInfoButton = document.querySelector(".ext-info-button");
 const promiseInfo = document.querySelector(".promise-info");
 const promiseInfoButton = document.querySelector(".promise-info-button");
+const paymentCorrectionButton = document.querySelector(
+  ".payment-correction-button"
+);
+const paymentCorrectionInfo = document.querySelector(
+  ".payment-correction-info"
+);
 const extensionButton = document.querySelector(".extension-button");
 
 createNoteButton.addEventListener("click", () => {
   const generatedNote = `
 ${getRadioValue(lca).toUpperCase()} call
-I adv. PDA: $${pda.value} plus late charges of $${
-    lateCharge.value
+I adv. PDA: $${pda.value} ${
+    lateCharge.value !== "" ? `plus late charges of $${lateCharge.value}` : ""
   } and misc charges of $${miscCharge.value}. Next DD ${nextDd.value} IAO $${
     nextDdAmount.value
   }.
@@ -48,6 +54,10 @@ extInfoButton.addEventListener("click", () => {
 
 promiseInfoButton.addEventListener("click", () => {
   promiseInfo.classList.toggle("promise-info-displayed");
+});
+
+paymentCorrectionButton.addEventListener("click", () => {
+  paymentCorrectionInfo.classList.toggle("payment-correction-info-displayed");
 });
 
 extensionButton.addEventListener("click", () => {

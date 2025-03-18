@@ -11,6 +11,34 @@
     <h1 class="header">This is a Note Generator</h1>
     <button type="button" class="ext-info-button">Ext Info</button>
     <button type="button" class="promise-info-button">Promise info</button>
+    <button type="button" class="payment-correction-button">
+      Pmt Correction
+    </button>
+    <div class="payment-correction-info">
+      <fieldset>
+        <legend>Move From</legend>
+        <select name="payment-correction-from" id="payment-correction-from">
+          <option value="from-payments">Payments</option>
+          <option value="from-late-charges">Late Charges</option>
+          <option value="from-misc-charges">Misc Charges</option>
+          <option value="from-principal">Principal</option>
+        </select>
+      </fieldset>
+      <label for="correction-amount">Correction Amount: </label>
+      <input type="text" />
+      <label for="correction-amount-info">Correction Amount Info: </label>
+      <input type="text" />
+      <fieldset>
+        <legend>Move To</legend>
+        <select name="payment-correction-to" id="payment-correction-to">
+          <option value="to-payments">Payments</option>
+          <option value="to-late-charges">Late Charges</option>
+          <option value="to-misc-charges">Misc Charges</option>
+          <option value="to-principal">Principal</option>
+        </select>
+      </fieldset>
+      <button type="button" class="generate-correction-button">Generate</button>
+    </div>
     <form action="#">
       <fieldset>
         <legend>LCA</legend>
@@ -39,7 +67,7 @@
           <input type="text" id="next-dd" name="next-dd" />
         </div>
         <div class="account-facts-group">
-          <label for="next-dd-amount">Next Amtt: </label>
+          <label for="next-dd-amount">Next Amt: </label>
           <input type="text" id="next-dd-amount" name="next-dd-amount" />
         </div>
       </div>
